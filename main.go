@@ -20,7 +20,7 @@ func main() {
 		log.Fatalf("Invalid phase ID: %d", *argPhase)
 	}
 
-	p := phase.New(*argDataDir, 1)
+	p := phase.New(*argDataDir, uint8(*argPhase))
 	p.Check(*argServer, phase.CheckOpts{
 		MaxErrors: *argMaxErrors,
 	})
